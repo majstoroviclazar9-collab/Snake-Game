@@ -74,7 +74,3 @@ Snake/
 - Obstacles and bonus items
 - A leaderboard
 - Custom snake themes
-
-## License
-
-This project is currently provided without a license. Add a license file if you plan to distribute or accept contributions to it.
