@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 i {
+    color: #4CAF50;
+    margin-right: 10px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.score, .high-score {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.score i { color: #ff6b6b; }
+.high-score i { color: #ffd93d; }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+#gameCanvas {
+    border: 3px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #0d1b2a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.speed-control label i {
+    color: #4CAF50;
+    margin-right: 8px;
+}
+
+#speed {
+    width: 200px;
+    accent-color: #4CAF50;
+}
+
+#speed-value {
+    min-width: 80px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-start {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    color: white;
+}
+
+.btn-pause {
+    background: linear-gradient(to right, #2196F3, #1976D2);
+    color: white;
+}
+
+.btn-reset {
+    background: linear-gradient(to right, #ff9800, #f57c00);
+    color: white;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    width: 100%;
+}
+
+.instructions h3 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.instructions p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions i {
+    color: #4CAF50;
+    width: 20px;
+}
+
+.game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    color: white;
+}
+
+.game-over h2 {
+    font-size: 3.5rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.game-over p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+#playAgainBtn {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .game-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .score-board {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .score, .high-score {
+        min-width: auto;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    #gameCanvas {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1><i class="fas fa-snake"></i>Snake</h1>
+            <div class="score-board">
+                <div class="score">
+                    <i class="fas fa-apple-alt"></i>
+                    <span>Score: <span id="score">0</span></span>
+                </div>
+                <div class="high-score">
+                    <i class="fas fa-trophy"></i>
+                    <span>High: <span id="high-score">0</span></span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div class="controls">
+                <div class="speed-control">
+                    <label for="speed"><i class="fas fa-tachometer-alt"></i> Speed:</label>
+                    <input type="range" id="speed" min="5" max="20" value="10">
+                    <span id="speed-value">Medium</span>
+                </div>
+                
+                <div class="buttons">
+                    <button id="startBtn" class="btn btn-start">
+                        <i class="fas fa-play"></i> Start Game
+                    </button>
+                    <button id="pauseBtn" class="btn btn-pause" disabled>
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button id="resetBtn" class="btn btn-reset">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-gamepad"></i> How to Play</h3>
+                <p><i class="fas fa-arrow-up"></i> <i class="fas fa-arrow-down"></i> 
+                   <i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> 
+                   Use arrow keys to control the snake</p>
+                <p><i class="fas fa-apple-alt"></i> Eat the red apples to grow and score points</p>
+                <p><i class="fas fa-skull-crossbones"></i> Avoid hitting yourself!</p>
+            </div>
+        </main>
+        
+        <div class="game-over" id="gameOverScreen">
+            <h2>Game Over!</h2>
+            <p>Your score: <span id="final-score">0</span></p>
+            <button id="playAgainBtn" class="btn btn-start">
+                <i class="fas fa-play-circle"></i> Play Again
+            </button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
